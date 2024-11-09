@@ -1,3 +1,11 @@
+MAIN_COMPONENT_FILE = ""
+main_component = nil
+
+function love.load()
+	file = love.filesystem.read(COMPONENT_FILE)
+	main_component = compile(file)
+end
+
 function love.draw()
-	love.graphics.print("Hello World", 400, 300)
+	for e in components e.render() end
 end
